@@ -1,0 +1,12 @@
+K8S_OVS_ETCD_ENDPOINTS="--etcd-endpoints=http://127.0.0.1:2379"
+
+K8S_OVS_ETCD_PREFIX="--etcd-prefix=/k8s.ovs.com/ovs/network"
+
+# K8S_OVS_ETCD_CA_CERT_KEY="--etcd-cafile=/path/to/ca --etcd-certfile=/path/to/cert --etcd-keyfile=/patch/to/key"
+K8S_OVS_ETCD_CA_CERT_KEY=""
+
+HOSTNAME=""
+
+KUBERNETES_MASTER="127.0.0.1:11080"
+
+KUBECONFIG=""

@@ -1,0 +1,17 @@
+[Unit]
+Description=Kubernetes SDN
+After=network.target
+After=network-online.target
+Wants=network-online.target
+After=etcd.service
+
+[Service]
+Type=notify
+EnvironmentFile=-/etc/sysconfig/k8s-ovs
+ExecStart=/usr/sbin/k8s-ovs ${K8S_OVS_ETCD_ENDPOINTS} ${K8S_OVS_ETCD_PREFIX} ${K8S_OVS_ETCD_CA_CERT_KEY} ${HOSTNAME} --alsologtostderr --v=5
+Restart=always
+StartLimitInterval=0
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
